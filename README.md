@@ -1,2 +1,0 @@
-# DesignPatternOOP
-Presentation OOP
