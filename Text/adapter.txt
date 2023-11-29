@@ -1,0 +1,35 @@
+1. Định Nghĩa:
+Adapter là một cấu trúc thiết kế cho phép các đối tượng có giao diện không tương thích với nhau được cộng tác với nhau.
+
+Ví dụ 1:
+Hãy tưởng tượng bạn đang tạo một ứng dụng theo dõi thị trường chứng khoán. Ứng dụng tải xuống dữ liệu chứng khoán từ nhiều nguồn ở định dạng XML, sau đó hiển thị các biểu đồ và sơ đồ đẹp mắt cho người dùng.
+Tại một thời điểm nào đó, bạn quyết định cải thiện ứng dụng bằng cách tích hợp thư viện phân tích thông minh của bên thứ 3. Nhưng có một nhược điểm: thư viện phân tích chỉ hoạt động với dữ liệu ở định dạng JSON.
+Bạn có thể thay đổi thư viện để hoạt động với XML. Tuy nhiên, điều này có thể phá vỡ cấu trúc một số mã hiện có dựa trên thư viện. Và tệ hơn, bạn có thể không có quyền truy cập vào mã nguồn của thư viện ngay từ đầu, khiến phương pháp này không thể thực hiện được.
+
+Ví dụ 2:
+Trong thực tế, có rất nhiều loại phích cắm điện với đa dạng chủng loại và thiết kế. Tùy vào đất nước và mục đích sử dụng của từng cá nhân và tổ chức khác nhau.
+Ở Việt Nam thường sử dụng cách loại phích cắm điện có 2 chân để phù hợp với ổ điện có hai lỗ cắm. Tuy nhiên, nếu một ngày bạn đi du lịch qua các nước Mỹ Âu vả bạn nhận ra tại đây mọi người đều sử dụng các loại phích cắm điện 3 chân và ổ cắm điện cũng không phù hợp với loại bạn đang dùng ở Việt Nam và trong hoàn cảnh đó chiếc Laptop của bạn đang cần sạc Pin gấp thì bạn nên xử lý như thế nào?
+
+Giải Pháp:
+Bạn có thể tạo một bộ chuyển đổi (Adapter). Đây là một đối tượng đặc biệt có chức năng chuyển đổi giao diện của một đối tượng để đối tượng khác có thể hiểu được.
+Adapter bao bọc một trong các đối tượng để che giấu sự phức tạp của quá trình chuyển đổi diễn ra ở hậu trường. Đối tượng được bao bọc thậm chí không nhận biết được bộ chuyển đổi. Ví dụ: bạn có thể bao bọc một đối tượng hoạt động theo đơn vị mét và kilômét bằng một bộ chuyển đổi có thể chuyển đổi tất cả dữ liệu sang các đơn vị hệ đo lường Anh như feet và dặm.
+Adapter không chỉ có thể chuyển đổi dữ liệu sang nhiều định dạng khác nhau mà còn có thể giúp các đối tượng có giao diện khác nhau cộng tác với nhau. Đây là cách nó hoạt động:
+1. Adapter có giao diện tương thích với một trong các đối tượng hiện có.
+2. Sử dụng giao diện này, đối tượng hiện có có thể gọi các phương thức của Adapter một cách an toàn.
+3. Khi nhận được cuộc gọi, Adapter sẽ chuyển yêu cầu đến đối tượng thứ hai nhưng theo định dạng và thứ tự mà đối tượng thứ hai mong đợi.
+Đôi khi, thậm chí có thể tạo Adapter hai chiều có thể chuyển đổi cuộc gọi theo cả hai hướng.
+
+Giải Pháp cho Ví dụ 1:
+Để giải quyết vấn đề nan giải về các định dạng không tương thích, bạn có thể tạo bộ chuyển đổi XML sang JSON cho mọi lớp của thư viện phân tích mà mã của bạn làm việc trực tiếp. Sau đó, bạn điều chỉnh mã của mình để chỉ giao tiếp với thư viện thông qua các Adapter này. Khi Adapter nhận được lệnh gọi, nó sẽ dịch dữ liệu XML đến thành cấu trúc JSON và chuyển lệnh gọi đó đến các phương thức thích hợp của đối tượng phân tích được bao bọc.
+
+Giải Pháp cho Ví dụ 2:
+Bạn có thể sử dụng bộ chuyển đổi phích cắm giữa hai chân và ba chân để có thể sử dụng được ổ điện 3 chấu ở các nước Mỹ Âu.
+
+Thực Tế:
+Trong thực tế tồn tại rất nhiều ví dụ về Adapter như:
++) Các cổng kết nối giữa các thiết bị di động thường để kết nối với một thiết bị hay loại cổng khác người ta thường dùng các bộ chuyển đổi cổng. Một bộ chuyển đó có thể chuyển đối bao gồm rất nhiều cổng đầu vào và rất nhiều cổng đầu ra phục vụ việc chuyển đổi qua lại.
++) Các Apdapter phục vụ việc chuyển đổi các loại thẻ
+
+Sử dụng:
+1. Sử dụng lớp Adapter khi bạn muốn sử dụng một số lớp hiện có nhưng giao diện của nó không tương thích với phần còn lại của mã.
+2. Sử dụng lớp Adapter khi bạn muốn tái sử dụng những lớp con hiện có nhưng những lớp con này không có những phưỡng thức chung để được thêm vào lớp cha. 
