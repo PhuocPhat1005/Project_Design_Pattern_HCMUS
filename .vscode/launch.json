@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "console": "externalTerminal",
-      "cwd": "c:/Users/phatl/OneDrive - VNU-HCMUS/Desktop/DesignPatternOOP",
-      "program": "c:/Users/phatl/OneDrive - VNU-HCMUS/Desktop/DesignPatternOOP/build/Debug/outDebug"
+      "cwd": ".",
+      "program": "build/Debug/outDebug"
     }
   ]
 }
