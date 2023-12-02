@@ -1,4 +1,5 @@
 1. Định Nghĩa:
+
 Adapter là một cấu trúc thiết kế cho phép các đối tượng có giao diện không tương thích với nhau được cộng tác với nhau.
 
 Ví dụ 1:
@@ -32,4 +33,5 @@ Trong thực tế tồn tại rất nhiều ví dụ về Adapter như:
 
 Sử dụng:
 1. Sử dụng lớp Adapter khi bạn muốn sử dụng một số lớp hiện có nhưng giao diện của nó không tương thích với phần còn lại của mã.
-2. Sử dụng lớp Adapter khi bạn muốn tái sử dụng những lớp con hiện có nhưng những lớp con này không có những phưỡng thức chung để được thêm vào lớp cha. 
+2. Sử dụng lớp Adapter khi bạn muốn tái sử dụng những lớp con hiện có nhưng những lớp con này không có những phưỡng thức chung để được thêm vào một lớp cha.
+
