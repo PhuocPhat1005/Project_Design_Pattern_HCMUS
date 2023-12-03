@@ -139,7 +139,7 @@ Bộ điều hợp lớp không cần bọc bất kỳ đối tượng nào vì 
 * `Adapter Pattern` cung cấp một giao diện khác biệt hoàn toàn để truy cập một đối tượng hiện có. Mặt khác, với `Decorator Pattern`, giao diện vẫn giữ nguyên hoặc được mở rộng. Ngoài ra, `Decorator Pattern` còn hỗ trợ thành phần đệ quy, điều này không thể thực hiện được khi bạn sử dụng `Adapter Pattern`.
 * Với `Adapter Pattern`, bạn truy cập một đối tượng hiện có thông qua giao diện khác. Với `Proxy Pattern` thì giao diện vẫn giữ nguyên. Với `Decorator Pattern`, bạn truy cập đối tượng thông qua giao diện nâng cao.
 * `Facade Pattern` xác định giao diện mới cho các đối tượng hiện có, trong khi `Adapter Pattern` cố gắng làm cho giao diện hiện tại có thể sử dụng được. `Adapter Pattern` thường chỉ đóng gói một đối tượng, trong khi `Facade Pattern` hoạt động với toàn bộ hệ thống con của các đối tượng.
-* `Bridge Pattern`, `State Pattern` và `Strategy Patterns` (có thể được áp dụng như `Object Adapter`
+* `Bridge Pattern`, `State Pattern` và `Strategy Patterns` (có thể được áp dụng như `Object Adapter`) có cấu trúc rất giống nhau. Thật vậy, tất cả các mẫu này đều dựa trên thành phần, tức là ủy quyền công việc cho các đối tượng khác. Tuy nhiên, tất cả đều giải quyết các vấn đề khác nhau. Một mẫu không chỉ là công thức để cấu trúc code của bạn theo một cách cụ thể. Nó cũng có thể thông báo cho các nhà phát triển khác về vấn đề mà mẫu này giải quyết được.
 
 ------------------
 
@@ -149,7 +149,7 @@ Bộ điều hợp lớp không cần bọc bất kỳ đối tượng nào vì 
 | ---------- | ----------------| ----- | --------| -------------|----------------|
 | 22127174   | Ngo Van Khai    | OOP   |Code (assistant) + Write the report (edit + content)| Should do carefully about content (definition + explain project structure + explain code project in  report) + share link word document with members|Source code + Report|
 | 22127322   | Le Phuoc Phat   | OOP   |Code (assistant) + Video project (edit video) + report (edit) + manager|Edit video + edit report + edit source code|Source Code + Video + Report|
-| 22127388   | To Quoc Thanh   | OOP   |Code (mentor) + Video project (representatives) + write the report (assistant + help KhaiNgo write the report)       | Code carfully the structural and behavior design pattern (main ideas + all classes) and then present your ideas with the members of team| Source code + Video + Report|
+| 22127388   | To Quoc Thanh   | OOP   |Code (mentor) + Video project (representatives) + write the report (assistant + help KhaiNgo write the report) + Draw UML| Code carfully the structural and behavior design pattern (main ideas + all classes) and then present your ideas with the members of team| Source code + Video + Report + UML|
 | 22127441   | Thai Huyen Tung | OOP   |Code (edit code + comment the code + explain code carefully) + do the slides (edit + content $\to$ mentor)|Do slides on the canvas and share the link of slide with the members of team|Source code + Slide|
 
 Please follow the link below to see the details of the assignment tasks:
