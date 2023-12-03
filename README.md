@@ -124,6 +124,23 @@ Bộ điều hợp lớp không cần bọc bất kỳ đối tượng nào vì 
 
 5. Triển khai lần lượt tất cả các methods của ***Client Interface*** trong class ***Adapter***. Class ***Adapter*** sẽ ủy quyền hầu hết công việc thực sự cho đối tượng ***Service***, chỉ xử lý việc chuyển đổi định dạng dữ liệu hoặc giao diện.
 
+6. Các clients nên sử dụng ***Adapter*** thông qua ***Client Interface***. Điều này sẽ cho phép bạn thay đổi hoặc mở rộng ***Adapter*** mà không làm thay đổi code của ***Client***.
+
+### 7. Pros and Cons
+
+|Advantages|Disadvantages|
+|----------|-------------|
+|*Single Responsibility Principle*. Bạn có thể tách giao diện hoặc mã chuyển đổi dữ liệu khỏi logic nghiệp vụ chính của chương trình.|Độ phức tạp tổng thể của mã tăng lên vì bạn cần giới thiệu một tập hợp các giao diện và lớp mới. Đôi khi, việc thay đổi lớp dịch vụ sao cho phù hợp với phần còn lại của mã sẽ đơn giản hơn.|
+|*Open/Closed Principle*.Bạn có thể đưa các loại ***Adapter*** mới vào chương trình mà không vi phạm code của client hiện có, miễn là chúng hoạt động với các ***Adapters*** thông qua ***Client Interface***.||
+
+### 8. Relations with Other Patterns
+
+* `Bridge Pattern` thường được thiết kế trước, cho phép bạn phát triển các phần của ứng dụng độc lập với nhau. Mặt khác, `Adapter Pattern` thường được sử dụng với một ứng dụng hiện có để làm cho một số lớp không tương thích hoạt động tốt với nhau.
+* `Adapter Pattern` cung cấp một giao diện khác biệt hoàn toàn để truy cập một đối tượng hiện có. Mặt khác, với `Decorator Pattern`, giao diện vẫn giữ nguyên hoặc được mở rộng. Ngoài ra, `Decorator Pattern` còn hỗ trợ thành phần đệ quy, điều này không thể thực hiện được khi bạn sử dụng `Adapter Pattern`.
+* Với `Adapter Pattern`, bạn truy cập một đối tượng hiện có thông qua giao diện khác. Với `Proxy Pattern` thì giao diện vẫn giữ nguyên. Với `Decorator Pattern`, bạn truy cập đối tượng thông qua giao diện nâng cao.
+* `Facade Pattern` xác định giao diện mới cho các đối tượng hiện có, trong khi `Adapter Pattern` cố gắng làm cho giao diện hiện tại có thể sử dụng được. `Adapter Pattern` thường chỉ đóng gói một đối tượng, trong khi `Facade Pattern` hoạt động với toàn bộ hệ thống con của các đối tượng.
+* `Bridge Pattern`, `State Pattern` và `Strategy Patterns` (có thể được áp dụng như `Object Adapter`
+
 ------------------
 
 ## ASSIGNMENT TASKS
