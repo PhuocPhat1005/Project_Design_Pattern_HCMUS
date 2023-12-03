@@ -1,4 +1,4 @@
-# PROJECT DESIGN PATTERN
+# PROJECT DESIGN PATTERN 
 
 ------------------
 
@@ -40,14 +40,14 @@ Group leader submit the link to the folder through Moodle.
 
 **Adapter** là mẫu thiết kế cấu trúc cho phép các đối tượng có giao diện không tương thích cộng tác. (**Adapter** is a *structural* design pattern that allows objects with incompatible interfaces to collaborate.)
 
-![adapter](https://refactoring.guru/images/patterns/content/adapter/adapter-en.png)
+<center><img src = https://refactoring.guru/images/patterns/content/adapter/adapter-en.png></center>
 
 ### 2. Problem
 
 **Ví dụ 1:**
 Hãy tưởng tượng bạn đang tạo một ***ứng dụng*** theo dõi thị trường chứng khoán. Ứng dụng tải xuống dữ liệu chứng khoán từ nhiều nguồn ở định dạng XML, sau đó hiển thị các biểu đồ và sơ đồ đẹp mắt cho người dùng.
 
-![adapter](https://refactoring.guru/images/patterns/diagrams/adapter/problem-en-2x.png)
+<center><img src = https://refactoring.guru/images/patterns/diagrams/adapter/problem-en-2x.png></center>
 
 Tại một thời điểm nào đó, bạn quyết định cải thiện ứng dụng bằng cách tích hợp thư viện phân tích thông minh của bên thứ 3. Nhưng có một nhược điểm: thư viện phân tích chỉ hoạt động với dữ liệu ở định dạng JSON. Bạn có thể thay đổi thư viện để hoạt động với XML. Tuy nhiên, điều này có thể phá vỡ cấu trúc một số mã hiện có dựa trên thư viện. Và tệ hơn, bạn có thể không có quyền truy cập vào mã nguồn của thư viện ngay từ đầu, khiến phương pháp này không thể thực hiện được.
 
@@ -55,7 +55,7 @@ Tại một thời điểm nào đó, bạn quyết định cải thiện ứng 
 Trong thực tế, có rất nhiều loại phích cắm điện với đa dạng chủng loại và thiết kế. Tùy vào đất nước và mục đích sử dụng của từng cá nhân và tổ chức khác nhau.
 Ở Việt Nam thường sử dụng cách loại phích cắm điện có 2 chân để phù hợp với ổ điện có hai lỗ cắm. Tuy nhiên, nếu một ngày bạn đi du lịch qua các nước Mỹ Âu vả bạn nhận ra tại đây mọi người đều sử dụng các loại phích cắm điện 3 chân và ổ cắm điện cũng không phù hợp với loại bạn đang dùng ở Việt Nam và trong hoàn cảnh đó chiếc Laptop của bạn đang cần sạc Pin gấp thì bạn nên xử lý như thế nào?
 
-![ex2](https://refactoring.guru/images/patterns/content/adapter/adapter-comic-1-en.png)
+<center><img src = https://refactoring.guru/images/patterns/content/adapter/adapter-comic-1-en.png></center>
 
 ### 3. Solution
 
@@ -71,7 +71,7 @@ Bộ ***adapter*** không chỉ có thể chuyển đổi dữ liệu sang nhi�
 
 Đôi khi, thậm chí có thể tạo bộ adapter hai chiều có thể chuyển đổi cuộc gọi theo cả hai hướng.
 
-![adapter](https://refactoring.guru/images/patterns/diagrams/adapter/solution-en-2x.png)
+<center><img src =https://refactoring.guru/images/patterns/diagrams/adapter/solution-en-2x.png> </center>
 
 Hãy quay lại ứng dụng thị trường chứng khoán trong ví dụ 1 . Để giải quyết vấn đề nan giải về các định dạng không tương thích, ta có thể tạo bộ chuyển đổi XML sang JSON cho mọi lớp của thư viện phân tích mà mã của ta làm việc trực tiếp. Sau đó, ta điều chỉnh mã của mình để chỉ giao tiếp với thư viện thông qua các bộ ***adapter*** này. Khi bộ điều hợp nhận được lệnh gọi, nó sẽ dịch dữ liệu XML đến thành cấu trúc JSON và chuyển lệnh gọi đó đến các phương thức thích hợp của đối tượng phân tích được bao bọc.
 
@@ -81,7 +81,7 @@ Hãy quay lại ứng dụng thị trường chứng khoán trong ví dụ 1 . �
 
 Việc triển khai này sử dụng nguyên lý thành phần đối tượng: bộ ***adapter*** triển khai giao diện của một đối tượng và bao bọc đối tượng kia. Nó có thể được thực hiện bằng tất cả các ngôn ngữ lập trình phổ biến.
 
-![objectAdapter](https://refactoring.guru/images/patterns/diagrams/adapter/structure-object-adapter-indexed.png)
+<center><img src=https://refactoring.guru/images/patterns/diagrams/adapter/structure-object-adapter-indexed.png></center>
 
 1. ***Client*** là lớp chứa logic nghiệp vụ (*business logic*) hiện có của chương trình.
 2. ***Client Interface*** là giao diện của ***client*** mà bộ ***adapter*** sẽ triển khai. Nó mô tả một giao thức mà các lớp khác phải tuân theo để có thể cộng tác với code của Client.
@@ -93,7 +93,7 @@ Việc triển khai này sử dụng nguyên lý thành phần đối tượng: 
 
 Việc triển khai này sử dụng tính kế thừa: **Adapter** kế thừa giao diện từ cả hai đối tượng cùng một lúc. Lưu ý rằng phương pháp này chỉ có thể được triển khai bằng các ngôn ngữ lập trình hỗ trợ đa kế thừa, chẳng hạn như C++.
 
-![classAdapter](https://refactoring.guru/images/patterns/diagrams/adapter/structure-class-adapter-indexed.png)
+<center> <img src = https://refactoring.guru/images/patterns/diagrams/adapter/structure-class-adapter-indexed.png> </center>
 
 Bộ điều hợp lớp không cần bọc bất kỳ đối tượng nào vì nó kế thừa các hành vi từ cả máy khách và dịch vụ. Sự thích ứng xảy ra trong các phương thức được ghi đè. Bộ điều hợp kết quả có thể được sử dụng thay cho lớp máy khách hiện có.
 
@@ -106,17 +106,40 @@ Bộ điều hợp lớp không cần bọc bất kỳ đối tượng nào vì 
 * Sử dụng mẫu này khi bạn muốn sử dụng lại một số lớp con hiện có thiếu một số chức năng phổ biến không thể thêm vào lớp cha.
 
   * Bạn có thể mở rộng từng lớp con và đưa chức năng còn thiếu vào các lớp con mới. Tuy nhiên, bạn sẽ cần phải sao chép mã trên tất cả các lớp mới này, điều này có vẻ rất tệ.
-  * Giải pháp tinh tế hon nhiều là có thể đặt các chức năng này vào một lớp ***Adapter*** đơn lẻ. Bây giờ các lớp con có thể kế thừa từ lớp ***Adapter*** và có tất cả các chức năng mà chúng cần.
+  * Giải pháp tinh tế hon nhiều là có thể đặt các chức năng này vào một lớp ***Adapter*** đơn lẻ. Bây giờ các lớp con có thể kế thừa từ lớp ***Adapter*** và có tất cả các chức năng mà chúng cần. Khi đó, bạn sẽ đóng gói các đối tượng có tính năng bị thiếu bên trong ***Adapter***, thu được các tính năng cần thiết một cách linh hoạt. Để tính năng này hoạt động, các lớp mục tiêu phải có giao diện chung và adapter's field phải tuân theo giao diện đó. Cách tiếp cận này trông rất giống với *Đecorator Pattern*. Tuy nhiên, ***Adapter*** thường cung cấp một giao diện khác so với các lớp mục tiêu. Nó cũng có thể là một lớp trung gian đơn giản không có chức năng bổ sung nào. Điều này có thể hữu ích khi bạn muốn tạo một số lớp con của một lớp không thể mở rộng (ví dụ: các lớp của bên thứ 3).
+  * Mẫu ***Adapter*** cho phép bạn tạo một lớp trung gian bổ sung để bao bọc các lớp không thể mở rộng.
 
-### 6. Implementation
+### 6. How to Implement
+
+1. Đảm bảo rằng bạn có ít nhất hai lớp có giao diện không tương thích:
+
+    * Một lớp ***Service*** hữu ích là lớp bạn không thê thay đổi (thường là lớp của bên thứ 3 hoặc lớp kế thừa hoặc với nhiều phụ thuộc hiện có).
+    * Một hay một số lớp ***Client*** rằng sẽ lấy lợi ích từ việc sử dụng lớp ***Service***.
+
+2. Khai báo giao diện ***Client*** và mô tả các phương thức mà ***Client*** sử dụng để tương tác với ***Service***.
+
+3. Tạo lớp ***Adapter*** và làm cho nó triển khai giao diện ***Client***. Bây giờ, chúng ta sẽ để trống tất cả các methods. Để ***Adapter*** có thể làm việc, nó phải có một trường để lưu trữ tham chiếu đến một đối tượng ***Service***. Thường thì ***Adapter*** nhận đối tượng ***Service*** thông qua tham số của phương thức khởi tạo của nó.
+
+4. Thêm một field vào lớp ***Adapter*** để lưu trữ tham chiếu đến một đối tượng ***Service***. Thường thì ***Adapter*** nhận đối tượng ***Service*** thông qua tham số của phương thức khởi tạo của nó. Cách thực hành phổ biến là khởi tạo field này thông qua constructor của ***Adapter***, nhưng thỉnh thoảng nó có thể tiện lợi hơn để chuyển nó tới lớp ***Adapter*** khi gọi methods của nó.
+
+5. Triển khai lần lượt tất cả các methods của ***Client Interface*** trong class ***Adapter***. Class ***Adapter*** sẽ ủy quyền hầu hết công việc thực sự cho đối tượng ***Service***, chỉ xử lý việc chuyển đổi định dạng dữ liệu hoặc giao diện.
 
 ------------------
 
 ## ASSIGNMENT TASKS
 
-| Student ID | Full name       | Group | Task    | Notes |
-| ---------- | ----------------| ----- | --------| ------|
-| 22127174   | Ngo Van Khai    |       |         |       |
-| 22127322   | Le Phuoc Phat   |       |         |       |
-| 22127388   | To Quoc Thanh   |       |         |       |
-| 22127441   | Thai Huyen Tung |       |         |       |
+| Student ID | Full name       | Group | Task    | Requirements | Final Products |
+| ---------- | ----------------| ----- | --------| -------------|----------------|
+| 22127174   | Ngo Van Khai    | OOP   |Code (assistant) + Write the report (edit + content)| Should do carefully about content (definition + explain project structure + explain code project in  report) + share link word document with members|Source code + Report|
+| 22127322   | Le Phuoc Phat   | OOP   |Code (assistant) + Video project (edit video) + report (edit) + manager|Edit video + edit report + edit source code|Source Code + Video + Report|
+| 22127388   | To Quoc Thanh   | OOP   |Code (mentor) + Video project (representatives) + write the report (assistant + help KhaiNgo write the report)       | Code carfully the structural and behavior design pattern (main ideas + all classes) and then present your ideas with the members of team| Source code + Video + Report|
+| 22127441   | Thai Huyen Tung | OOP   |Code (edit code + comment the code + explain code carefully) + do the slides (edit + content $\to$ mentor)|Do slides on the canvas and share the link of slide with the members of team|Source code + Slide|
+
+Please follow the link below to see the details of the assignment tasks:
+
+* **Slides on Canvas** : [Link of Slides](https://www.canva.com/design/DAF15JPCa78/dqBIAPuwKWfjuz2uXGdgTA/edit?utm_content=DAF15JPCa78&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+* **Report** : [Link on Report](https://studenthcmusedu-my.sharepoint.com/:w:/g/personal/22127322_student_hcmus_edu_vn/Ee7hBxCzbflCicQHjYRumQUB2ig6sBtjKew-dgqIOUgYmA?e=ei5pMI)
+* **Source code** : [Link on Source code](<https://github.com/PhuocPhat1005/DesignPatternOOP.git>)
+* **Video** : [Link on Video](https://www.capcut.com/s/CZSTDa1aJJEy7NAR/)
+
+**MUST BE DONE BEFORE 23:59:00 DECEMBER **$20^{th}$**, 2023**
