@@ -259,5 +259,6 @@ Please follow the link below to see the details of the assignment tasks:
 * **Source code** : [Link on Source code](<https://github.com/PhuocPhat1005/DesignPatternOOP.git>)
 * **Video** : [Link on Video](https://www.capcut.com/s/CZSTDa1aJJEy7NAR/)
 * **UML Drawing** : [Link on UML](https://drive.google.com/file/d/16kzgobSHHAG5baFU5Res1TjHi__2yT6R/view?usp=sharing)
+* **Google Drive :**  [Link on Google Drive](<https://drive.google.com/drive/folders/1U5lKAIU72h_7iKDdAQJ7TRZDnYc344dc?usp=sharing>)
 
 **MUST BE DONE BEFORE 23:59:00 DECEMBER **$20^{th}$**, 2023**
