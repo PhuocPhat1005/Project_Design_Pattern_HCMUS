@@ -53,31 +53,31 @@ public:
     }
     void set_info()
     {
-        std::cout << "Name: ";
+        cout << "Name: ";
         getline(cin, name);
-        std::cout << "Address: ";
+        cout << "Address: ";
         getline(cin, address);
-        std::cout << "Phone: ";
+        cout << "Phone: ";
         getline(cin, phone);
-        std::cout << "Email: ";
+        cout << "Email: ";
         getline(cin, mail);
     }
     void changeInfo()
     {
         string tmp = "";
-        std::cout << "New Name (press -1 to giu nguyen): ";
+        cout << "New Name (press -1 to giu nguyen): ";
         getline(cin, tmp);
         if (tmp != "-1")
             name = tmp;
-        std::cout << "New Address (press -1 to giu nguyen): ";
+        cout << "New Address (press -1 to giu nguyen): ";
         getline(cin, tmp);
         if (tmp != "-1")
             address = tmp;
-        std::cout << "New Phone (press -1 to giu nguyen): ";
+        cout << "New Phone (press -1 to giu nguyen): ";
         getline(cin, tmp);
         if (tmp != "-1")
             phone = tmp;
-        std::cout << "New Email (press -1 to giu nguyen): ";
+        cout << "New Email (press -1 to giu nguyen): ";
         getline(cin, tmp);
         if (tmp != "-1")
             mail = tmp;
@@ -86,10 +86,10 @@ public:
 
     // virtual void showInfo()
     // {
-    //     std::cout << "Name: " << name << endl;
-    //     std::cout << "Address: " << address << endl;
-    //     std::cout << "Phone: " << phone << endl;
-    //     std::cout << "Email: " << mail << endl;
+    //     cout << "Name: " << name << endl;
+    //     cout << "Address: " << address << endl;
+    //     cout << "Phone: " << phone << endl;
+    //     cout << "Email: " << mail << endl;
     // }
 };
 
@@ -180,7 +180,7 @@ public:
     void calc_all_money()
     {
         long long tmp = mediator->calc_money();
-        std::cout << "All money: " << tmp << endl;
+        cout << "All money: " << tmp << endl;
     }
     bool find_card(string type)
     {
@@ -241,29 +241,29 @@ public:
     void changePassword()
     {
         string password;
-        std::cout << "Input new password: ";
+        cout << "Input new password: ";
         getline(cin, password);
         account.set_password(password);
     }
     void change_money()
     {
-        std::cout << "You are not allowed to change money!\n";
+        cout << "You are not allowed to change money!\n";
         return;
     }
     void showInfo()
     {
         // People::showInfo();
-        std::cout << "Name: " << name << endl;
-        std::cout << "Address: " << address << endl;
-        std::cout << "Phone: " << phone << endl;
-        std::cout << "Email: " << mail << endl;
-        std::cout << "Money in account: " << money << endl;
+        cout << "Name: " << name << endl;
+        cout << "Address: " << address << endl;
+        cout << "Phone: " << phone << endl;
+        cout << "Email: " << mail << endl;
+        cout << "Money in account: " << money << endl;
         if (cards.size() == 0)
-            std::cout << "No card!" << endl;
+            cout << "No card!" << endl;
         else
             for (int i = 0; i < cards.size(); i++)
             {
-                std::cout << "Card " << i + 1 << ": " << cards[i].get_type() << " card | Money in this card: " << cards[i].get_money_in_card() << endl;
+                cout << "Card " << i + 1 << ": " << cards[i].get_type() << " card | Money in this card: " << cards[i].get_money_in_card() << endl;
             }
     }
     long long calc_money() override
@@ -304,7 +304,7 @@ public:
     }
     void get_noti(string noti)
     {
-        std::cout << "User " << name << " got a notification: " << noti << endl;
+        cout << "User " << name << " got a notification: " << noti << endl;
     }
     ~User()
     {
@@ -321,11 +321,11 @@ public:
     }
     void change_money(User *user, Bank *bank) const
     {
-        std::cout << "Change money of " << user->get_name() << " to: ";
+        cout << "Change money of " << user->get_name() << " to: ";
         long long tmp;
         cin >> tmp;
         cin.ignore();
-        std::cout << "Change money of " << user->get_name() << " from " << user->get_money() << " to " << tmp << " successfully!" << endl;
+        cout << "Change money of " << user->get_name() << " from " << user->get_money() << " to " << tmp << " successfully!" << endl;
         user->set_money(tmp);
         return;
     }
@@ -372,11 +372,11 @@ public:
     void set_info()
     {
         People::set_info();
-        std::cout << "ID: ";
+        cout << "ID: ";
         getline(cin, ID);
-        std::cout << "Password: ";
+        cout << "Password: ";
         getline(cin, password);
-        std::cout << "Salary: ";
+        cout << "Salary: ";
         cin >> salary;
         cin.ignore();
     }
@@ -386,7 +386,7 @@ public:
     }
     virtual void requestChangeSalary()
     {
-        std::cout << "Please waiting, admin will process your request!" << endl;
+        cout << "Please waiting, admin will process your request!" << endl;
     }
     void send_noti_to_user()
     {
@@ -395,12 +395,12 @@ public:
     void showInfo()
     {
         // People::showInfo();
-        std::cout << "Name: " << name << endl;
-        std::cout << "Address: " << address << endl;
-        std::cout << "Phone: " << phone << endl;
-        std::cout << "Email: " << mail << endl;
-        std::cout << "ID: " << ID << endl;
-        std::cout << "Salary: " << salary << endl;
+        cout << "Name: " << name << endl;
+        cout << "Address: " << address << endl;
+        cout << "Phone: " << phone << endl;
+        cout << "Email: " << mail << endl;
+        cout << "ID: " << ID << endl;
+        cout << "Salary: " << salary << endl;
     }
 };
 
@@ -414,30 +414,30 @@ public:
     void create_account(User *user, Bank *bank) const;
     void create_card(User *user, Bank *bank)
     {
-        std::cout << user->get_name() << endl;
+        cout << user->get_name() << endl;
         string type;
-        std::cout << "What type of card do you want to create? (Silver/Gold/Platinum): ";
+        cout << "What type of card do you want to create? (Silver/Gold/Platinum): ";
         getline(cin, type);
         type = low(type);
         while (type != "Silver" && type != "Gold" && type != "Platinum")
         {
-            std::cout << "What type of card do you want to create? (Silver/Gold/Platinum): ";
+            cout << "What type of card do you want to create? (Silver/Gold/Platinum): ";
             getline(cin, type);
         }
 
         if ((type == "Silver" && user->get_money() < 1000000) || (type == "Gold" && user->get_money() < 5000000) || (type == "Platinum" && user->get_money() < 10000000))
         {
-            std::cout << "Not enough money to create card!" << endl;
+            cout << "Not enough money to create card!" << endl;
             return;
         }
-        std::cout << "Create " << type << " card for " << user->get_name() << " successfully!" << endl;
-        std::cout << "Money in this card: ";
+        cout << "Create " << type << " card for " << user->get_name() << " successfully!" << endl;
+        cout << "Money in this card: ";
         long long tmp;
         cin >> tmp;
         cin.ignore();
         if (tmp > user->get_money())
         {
-            std::cout << "Not enough money to send to this card!\n";
+            cout << "Not enough money to send to this card!\n";
             return;
         }
         user->set_money(user->get_money() - tmp);
@@ -490,7 +490,7 @@ public:
     }
     void delete_user(User *user)
     {
-        std::cout << "Delete user " << user->get_name() << " successfully!" << endl;
+        cout << "Delete user " << user->get_name() << " successfully!" << endl;
         for (int i = 0; i < users.size(); i++)
         {
             if (users[i]->get_name() == user->get_name())
@@ -506,7 +506,7 @@ public:
     }
     void delete_manager(Manager *manager)
     {
-        std::cout << "Delete manager " << manager->get_name() << " successfully!" << endl;
+        cout << "Delete manager " << manager->get_name() << " successfully!" << endl;
         for (int i = 0; i < managers.size(); i++)
         {
             if (managers[i]->get_name() == manager->get_name())
@@ -518,25 +518,25 @@ public:
     }
     void showListUser()
     {
-        std::cout << "List of users in " << bankName << ": \n";
+        cout << "List of users in " << bankName << ": \n";
         if (users.size() == 0)
-            std::cout << "No data!\n";
+            cout << "No data!\n";
         else
             for (int i = 0; i < users.size(); i++)
             {
-                std::cout << "Users " << users[i]->get_ID() << ":\n";
+                cout << "Users " << users[i]->get_ID() << ":\n";
                 users[i]->showInfo();
             }
     }
     void showListManager() const
     {
-        std::cout << "List of managers in " << bankName << ": \n";
+        cout << "List of managers in " << bankName << ": \n";
         if (managers.size() == 0)
-            std::cout << "No data!\n";
+            cout << "No data!\n";
         else
             for (int i = 0; i < managers.size(); i++)
             {
-                std::cout << "Manager " << i + 1 << ":\n";
+                cout << "Manager " << i + 1 << ":\n";
                 managers[i]->showInfo();
             }
     }
@@ -568,11 +568,11 @@ public:
         {
             if (true) // managers[i].get_ID() == manager->get_ID()
             {
-                std::cout << "Change salary of " << manager->get_name() << " to: ";
+                cout << "Change salary of " << manager->get_name() << " to: ";
                 int tmp;
                 cin >> tmp;
                 cin.ignore();
-                std::cout << "Change salary of " << manager->get_name() << " from " << managers[i]->get_salary() << " to " << tmp << " successfully!" << endl;
+                cout << "Change salary of " << manager->get_name() << " from " << managers[i]->get_salary() << " to " << tmp << " successfully!" << endl;
                 managers[i]->set_salary(tmp);
                 UpdateManager(managers[i]);
                 return;
@@ -598,7 +598,7 @@ public:
     }
     void send_money_to_other_user(User *user) override
     {
-        std::cout << "Who do you want to send money to? ";
+        cout << "Who do you want to send money to? ";
         string name;
         getline(cin, name);
         User *user_get_money = new User();
@@ -610,17 +610,17 @@ public:
                 break;
             }
         }
-        std::cout << "How much do you want to send? ";
+        cout << "How much do you want to send? ";
         long long tmp;
         cin >> tmp;
         cin.ignore();
         if (tmp > user->get_money())
-            std::cout << "Not enough money to send to this user!\n";
+            cout << "Not enough money to send to this user!\n";
         else
         {
             user_get_money->set_money(user_get_money->get_money() + tmp);
             user->set_money(user->get_money() - tmp);
-            std::cout << "Send money to " << user_get_money->get_name() << " successfully!\n";
+            cout << "Send money to " << user_get_money->get_name() << " successfully!\n";
             UpdateUser(user_get_money);
         }
         delete user_get_money;
@@ -628,13 +628,13 @@ public:
     void send_noti_to_user() override
     {
         string noti;
-        std::cout << "Enter notification: ";
+        cout << "Enter notification: ";
         getline(cin, noti);
         for (int i = 0; i < users.size(); i++)
         {
             users[i]->get_noti(noti);
         }
-        std::cout << "Send notification to all users successfully!\n";
+        cout << "Send notification to all users successfully!\n";
     }
 };
 
@@ -662,11 +662,11 @@ void addUserToBank(User *user, Bank *bank)
         }
         file << endl;
         file.close();
-        std::cout << "User info saved to Account.txt successfully!" << endl;
+        cout << "User info saved to Account.txt successfully!" << endl;
     }
     else
     {
-        std::cout << "Unable to open file!" << endl;
+        cout << "Unable to open file!" << endl;
     }
 }
 
@@ -677,23 +677,23 @@ void addUserToBank(User *user, Bank *bank)
 //     {
 //         string name, address, phone, mail, ID, password, bankName, location;
 //         long long salary;
-//         std::cout << "Bank name: ";
+//         cout << "Bank name: ";
 //         getline(cin, bankName);
-//         std::cout << "Bank's location: ";
+//         cout << "Bank's location: ";
 //         getline(cin, location);
-//         std::cout << "Name: ";
+//         cout << "Name: ";
 //         getline(cin, name);
-//         std::cout << "Address: ";
+//         cout << "Address: ";
 //         getline(cin, address);
-//         std::cout << "Phone: ";
+//         cout << "Phone: ";
 //         getline(cin, phone);
-//         std::cout << "Email: ";
+//         cout << "Email: ";
 //         getline(cin, mail);
-//         std::cout << "ID: ";
+//         cout << "ID: ";
 //         getline(cin, ID);
-//         std::cout << "Password: ";
+//         cout << "Password: ";
 //         getline(cin, password);
-//         std::cout << "Salary: ";
+//         cout << "Salary: ";
 //         cin >> salary;
 //         cin.ignore();
 //         if(mail == "")
@@ -713,11 +713,11 @@ void addUserToBank(User *user, Bank *bank)
 //         file << salary << endl;
 //         file << endl;
 //         file.close();
-//         std::cout << "Manager info saved to Manager.txt successfully!" << endl;
+//         cout << "Manager info saved to Manager.txt successfully!" << endl;
 //     }
 //     else
 //     {
-//         std::cout << "Unable to open file!" << endl;
+//         cout << "Unable to open file!" << endl;
 //     }
 // }
 
@@ -774,7 +774,7 @@ void init(vector<Bank *> banks)
     }
     else
     {
-        std::cout << "Unable to open file!" << endl;
+        cout << "Unable to open file!" << endl;
     }
     file.open("Manager.txt");
     if (file.is_open())
@@ -811,9 +811,9 @@ void init(vector<Bank *> banks)
     }
     else
     {
-        std::cout << "Unable to open file!" << endl;
+        cout << "Unable to open file!" << endl;
     }
-    std::cout << "Init successfully!" << endl;
+    cout << "Init successfully!" << endl;
 }
 
 void saveData(vector<Bank *> banks)
@@ -868,20 +868,20 @@ void saveData(vector<Bank *> banks)
 void AdapterBank::create_account(User *user, Bank *bank) const
 {
     string username, password;
-    std::cout << "Username: ";
+    cout << "Username: ";
     getline(cin, username);
     while (bank->searchUser(username))
     {
-        std::cout << "Username already exists! Please choose another username: ";
+        cout << "Username already exists! Please choose another username: ";
         getline(cin, username);
     }
-    std::cout << "Password: ";
+    cout << "Password: ";
     getline(cin, password);
     Account account(username, password);
     user->set_account(account);
     user->set_money(0);
     user->set_ID(bank->users.size() + 1);
-    std::cout << "Create account for " << user->get_name() << " successfully!" << endl;
+    cout << "Create account for " << user->get_name() << " successfully!" << endl;
     user->set_email();
     bank->add_user(user);
     addUserToBank(user, bank);
@@ -949,12 +949,12 @@ int choiceMenu(vector<string> adj)
         gotoxy(100, i + 3);
         if (i == choice)
         {
-            std::cout << "-> ";
+            cout << "-> ";
             TextColor(10);
         }
         else
-            std::cout << "   ";
-        std::cout << i + 1 << ". " << adj[i] << endl;
+            cout << "   ";
+        cout << i + 1 << ". " << adj[i] << endl;
         TextColor(7);
     }
     while (1)
@@ -977,12 +977,12 @@ int choiceMenu(vector<string> adj)
                 gotoxy(100, i + 3);
                 if (i == choice)
                 {
-                    std::cout << "-> ";
+                    cout << "-> ";
                     TextColor(10);
                 }
                 else
-                    std::cout << "   ";
-                std::cout << i + 1 << ". " << adj[i] << endl;
+                    cout << "   ";
+                cout << i + 1 << ". " << adj[i] << endl;
                 TextColor(7);
             }
         }
@@ -1014,13 +1014,13 @@ int main()
                             new Bank("Vietcombank", "Ha Noi")};
     init(banks);
     system("cls");
-    std::cout << "Welcome to Viet Nam Bank!\nPlease choose a bank to continue: \n";
-    int choice1 = choiceMenu({"Vietcombank", "Vietinbank", "Agribank", "BIDV", "Vietcombank"});
+    cout << "Welcome to Viet Nam Bank!\nPlease choose a bank to continue: \n";
+    int choice1 = choiceMenu({"Vietcombank, Ho Chi Minh City", "Vietinbank, Ha Noi", "Agribank, Ho Chi Minh City", "BIDV, Da Nang", "Vietcombank, Ha Noi"});
 
     bank = banks[choice1];
 
-    std::cout << "Welcome to " << bank->get_bankName() << "!\n";
-    std::cout << "Please choose an option: \n";
+    cout << "Welcome to " << bank->get_bankName() << "!\n";
+    cout << "Please choose an option: \n";
     choice1 = choiceMenu({"Sign In", "Sign Up", "Exit"});
 
     bool flag1 = false;
@@ -1038,10 +1038,10 @@ int main()
             case 0:
             {
                 User *user = new User();
-                std::cout << "Username: ";
+                cout << "Username: ";
                 string username;
                 getline(cin, username);
-                std::cout << "Password: ";
+                cout << "Password: ";
                 string password;
                 getline(cin, password);
                 bool fought = false;
@@ -1055,24 +1055,24 @@ int main()
                     }
                 }
                 if (fought == false)
-                    std::cout << "Wrong username or password!\n";
+                    cout << "Wrong username or password!\n";
                 else
                 {
-                    std::cout << "Sign in successfully!" << endl;
-                    std::cout << "Welcome " << user->get_name() << endl;
+                    cout << "Sign in successfully!" << endl;
+                    cout << "Welcome " << user->get_name() << endl;
                     bool flag2 = false;
                     while (!flag2)
                     {
-                        // std::cout << "1. Change info\n";
-                        // std::cout << "2. Change password\n";
-                        // std::cout << "3. Create card\n"; // adapter
-                        // std::cout << "4. Show info\n";
-                        // std::cout << "5. Send request to change money\n"; // adapter
-                        // std::cout << "6. Sum of money in cards\n";        // mediator
-                        // std::cout << "7. Find card\n";                    // mediator
-                        // std::cout << "8. Rut tien ve tai khoan\n";        // mediator
-                        // std::cout << "9. Send money to other user\n";     // mediator
-                        // std::cout << "10. Exit\n";
+                        // cout << "1. Change info\n";
+                        // cout << "2. Change password\n";
+                        // cout << "3. Create card\n"; // adapter
+                        // cout << "4. Show info\n";
+                        // cout << "5. Send request to change money\n"; // adapter
+                        // cout << "6. Sum of money in cards\n";        // mediator
+                        // cout << "7. Find card\n";                    // mediator
+                        // cout << "8. Rut tien ve tai khoan\n";        // mediator
+                        // cout << "9. Send money to other user\n";     // mediator
+                        // cout << "10. Exit\n";
 
                         int choice3 = choiceMenu({"Change info", "Change password", "Create card", "Show info", "Send request to change money", "Sum of money in cards", "Find card", "Rut tien ve tai khoan", "Send money to other user", "Back"});
                         switch (choice3)
@@ -1103,7 +1103,7 @@ int main()
                         case 4:
                         {
                             user->change_money();
-                            std::cout << "An manager will process your request!\n";
+                            cout << "An manager will process your request!\n";
                             adapterM->change_money(user, bank);
                             bank->UpdateUser(user);
                             break;
@@ -1111,7 +1111,7 @@ int main()
                         case 5:
                         {
                             if (user->get_cards().size() == 0)
-                                std::cout << "You have no card!\n";
+                                cout << "You have no card!\n";
                             else
                                 user->get_cards()[0].calc_all_money();
                             break;
@@ -1119,33 +1119,33 @@ int main()
                         case 6:
                         {
                             if (user->get_cards().size() == 0)
-                                std::cout << "You have no card!\n";
+                                cout << "You have no card!\n";
                             else
                             {
-                                std::cout << "Choose type to check: \n";
+                                cout << "Choose type to check: \n";
                                 string type;
                                 getline(cin, type);
                                 type = low(type);
                                 if (user->findCard(type))
                                 {
-                                    std::cout << "You have this card!\nMoney in this card: ";
-                                    std::cout << user->get_cards()[0].get_money_in_card() << endl;
+                                    cout << "You have this card!\nMoney in this card: ";
+                                    cout << user->get_cards()[0].get_money_in_card() << endl;
                                     // Same result because of same mediator
-                                    // std::cout << user->get_cards()[1].get_money_in_card() << endl;
+                                    // cout << user->get_cards()[1].get_money_in_card() << endl;
                                 }
                                 else
-                                    std::cout << "You don't have this card!\n";
+                                    cout << "You don't have this card!\n";
                             }
                             break;
                         }
                         case 7:
                         {
                             if (user->get_cards().size() == 0)
-                                std::cout << "You have no card!\n";
+                                cout << "You have no card!\n";
                             else
                             {
                                 user->set_money(user->get_money() + user->send_money_to_account());
-                                std::cout << "Rut tien thanh cong!\n";
+                                cout << "Rut tien thanh cong!\n";
                             }
 
                             break;
@@ -1170,15 +1170,15 @@ int main()
             case 1:
             {
                 string password, ID;
-                std::cout << "Enter your ID: ";
+                cout << "Enter your ID: ";
                 getline(cin, ID);
-                std::cout << "Enter your password: ";
+                cout << "Enter your password: ";
                 getline(cin, password);
                 // Manager *pManager = bank->searchManager(ID, password);
                 Manager *pManager = new Manager("ThanhTo", "HCM", "0123456789", "", "", 1000000);
                 if (pManager != NULL)
                 {
-                    std::cout << "Hello " << pManager->get_name() << endl;
+                    cout << "Hello " << pManager->get_name() << endl;
                     bool flag3 = false;
                     while (!flag3)
                     {
@@ -1190,7 +1190,7 @@ int main()
                         {
                             string name;
                             bool found = false;
-                            std::cout << "Enter name of user: ";
+                            cout << "Enter name of user: ";
                             getline(cin, name);
                             User *user = new User();
                             for (int i = 0; i < bank->users.size(); i++)
@@ -1203,7 +1203,7 @@ int main()
                                 }
                             }
                             if (found == false)
-                                std::cout << "User not found!\n";
+                                cout << "User not found!\n";
                             else
                             {
                                 pManager->change_money(user, bank);
@@ -1215,7 +1215,7 @@ int main()
                         case 1:
                         {
                             pManager->requestChangeSalary();
-                            std::cout << "Admin processed your request!\n";
+                            cout << "Admin processed your request!\n";
                             adapterC->access(pManager, bank);
                             adapterC->requestChangeSalary();
                             break;
@@ -1241,7 +1241,7 @@ int main()
             }
             case 2:
             {
-                std::cout << "Hello admin!" << endl;
+                cout << "Hello admin!" << endl;
                 bool flag4 = false;
                 while (!flag4)
                 {
@@ -1265,12 +1265,12 @@ int main()
                         user->set_mediator(bank);
                         user->set_info();
                         bank->create_account(user, bank);
-                        std::cout << "Add user " << user->get_name() << " successfully!" << endl;
+                        cout << "Add user " << user->get_name() << " successfully!" << endl;
                     }
                     case 3:
                     {
                         string name;
-                        std::cout << "Enter name of user: ";
+                        cout << "Enter name of user: ";
                         getline(cin, name);
                         User *user = new User();
                         for (int i = 0; i < bank->users.size(); i++)
@@ -1291,13 +1291,13 @@ int main()
                         manager->set_mediator(bank);
                         manager->set_info();
                         bank->add_manager(manager);
-                        std::cout << "Add manager " << manager->get_name() << " successfully!" << endl;
+                        cout << "Add manager " << manager->get_name() << " successfully!" << endl;
                         break;
                     }
                     case 5:
                     {
                         string name;
-                        std::cout << "Enter name of manager: ";
+                        cout << "Enter name of manager: ";
                         getline(cin, name);
                         Manager *manager = new Manager();
                         for (int i = 0; i < bank->managers.size(); i++)
@@ -1340,7 +1340,7 @@ int main()
             user->set_mediator(bank);
             user->set_info();
             adapterB->create_account(user, bank);
-            std::cout << "Add user " << user->get_name() << " successfully!" << endl;
+            cout << "Add user " << user->get_name() << " successfully!" << endl;
             break;
         }
         case 2:
@@ -1352,390 +1352,17 @@ int main()
             break;
         }
     }
-    return 0;
-
-    bool stop = false;
-    while (!stop)
-    {
-        std::cout << "Sign in as: \n";
-        std::cout << "1. User\n";
-        std::cout << "2. Manager\n";
-        std::cout << "3. Admin\n";
-        std::cout << "4. Exit\n";
-        int choice;
-        cin >> choice;
-        cin.ignore();
-        switch (choice)
-        {
-        case 1:
-        {
-            std::cout << "1. Sign in\n";
-            std::cout << "2. Sign up\n"; // adaptor
-            User *user = new User();
-            int choice1;
-            cin >> choice1;
-            cin.ignore();
-            switch (choice1)
-            {
-            case 1:
-            {
-                std::cout << "Username: ";
-                string username;
-                getline(cin, username);
-                std::cout << "Password: ";
-                string password;
-                getline(cin, password);
-                bool fought = false;
-                for (int i = 0; i < bank->users.size(); i++)
-                {
-                    if (bank->users[i]->get_account().get_username() == username && bank->users[i]->get_account().get_password() == password)
-                    {
-                        user = bank->users[i];
-                        fought = true;
-                        break;
-                    }
-                }
-                if (fought == false)
-                    std::cout << "Wrong username or password!\n";
-                else
-                {
-                    std::cout << "Sign in successfully!" << endl;
-                    std::cout << "Welcome " << user->get_name() << endl;
-                    bool flag = true;
-                    while (flag)
-                    {
-                        std::cout << "1. Change info\n";
-                        std::cout << "2. Change password\n";
-                        std::cout << "3. Create card\n"; // adapter
-                        std::cout << "4. Show info\n";
-                        std::cout << "5. Send request to change money\n"; // adapter
-                        std::cout << "6. Sum of money in cards\n";        // mediator
-                        std::cout << "7. Find card\n";                    // mediator
-                        std::cout << "8. Rut tien ve tai khoan\n";        // mediator
-                        std::cout << "9. Send money to other user\n";     // mediator
-                        std::cout << "10. Exit\n";
-                        int choice12;
-                        cin >> choice12;
-                        cin.ignore();
-                        switch (choice12)
-                        {
-                        case 1:
-                        {
-                            user->changeInfo();
-                            bank->UpdateUser(user);
-                            break;
-                        }
-                        case 2:
-                        {
-                            user->changePassword();
-                            bank->UpdateUser(user);
-                            break;
-                        }
-                        case 3:
-                        {
-                            adapterB->create_card(user, bank);
-                            bank->UpdateUser(user);
-                            break;
-                        }
-                        case 4:
-                        {
-                            user->showInfo();
-                            break;
-                        }
-                        case 5:
-                        {
-                            user->change_money();
-                            std::cout << "An manager will process your request!\n";
-                            adapterM->change_money(user, bank);
-                            bank->UpdateUser(user);
-                            break;
-                        }
-                        case 6:
-                        {
-                            if (user->get_cards().size() == 0)
-                                std::cout << "You have no card!\n";
-                            else
-                                user->get_cards()[0].calc_all_money();
-                            break;
-                        }
-                        case 7:
-                        {
-                            if (user->get_cards().size() == 0)
-                                std::cout << "You have no card!\n";
-                            else
-                            {
-                                std::cout << "Choose type to check: \n";
-                                string type;
-                                getline(cin, type);
-                                type = low(type);
-                                if (user->findCard(type))
-                                {
-                                    std::cout << "You have this card!\nMoney in this card: ";
-                                    std::cout << user->get_cards()[0].get_money_in_card() << endl;
-                                    // Same result because of same mediator
-                                    // std::cout << user->get_cards()[1].get_money_in_card() << endl;
-                                }
-                                else
-                                    std::cout << "You don't have this card!\n";
-                            }
-                            break;
-                        }
-                        case 8:
-                        {
-                            if (user->get_cards().size() == 0)
-                                std::cout << "You have no card!\n";
-                            else
-                            {
-                                user->set_money(user->get_money() + user->send_money_to_account());
-                                std::cout << "Rut tien thanh cong!\n";
-                            }
-
-                            break;
-                        }
-                        case 9:
-                        {
-                            user->send_money_to_other_user();
-                            break;
-                        }
-                        case 10:
-                        {
-                            flag = false;
-                            break;
-                        }
-                        default:
-                            break;
-                        }
-                    }
-                }
-                break;
-            }
-            case 2:
-            {
-                user->set_mediator(bank);
-                user->set_info();
-                adapterB->create_account(user, bank);
-                std::cout << "Add user " << user->get_name() << " successfully!" << endl;
-                break;
-            }
-            default:
-                break;
-            }
-            // delete user; // ?????????????
-            break;
-        }
-        case 2:
-        {
-            string password, ID;
-            std::cout << "Enter your ID: ";
-            getline(cin, ID);
-            std::cout << "Enter your password: ";
-            getline(cin, password);
-            // Manager *pManager = bank->searchManager(ID, password);
-            Manager *pManager = new Manager("ThanhTo", "HCM", "0123456789", "", "", 1000000);
-            if (pManager != NULL)
-            {
-                std::cout << "Hello " << pManager->get_name() << endl;
-                bool flag = true;
-                while (flag)
-                {
-                    std::cout << "1. Change money of user\n";          // No adaptor
-                    std::cout << "2. Send request to change salary\n"; // Adaptor
-                    std::cout << "3. Send notification to users\n";    // Mediator
-                    std::cout << "4. Exit\n";
-                    int choice2;
-                    cin >> choice2;
-                    cin.ignore();
-
-                    switch (choice2)
-                    {
-                    case 1:
-                    {
-                        string name;
-                        bool found = false;
-                        std::cout << "Enter name of user: ";
-                        getline(cin, name);
-                        User *user = new User();
-                        for (int i = 0; i < bank->users.size(); i++)
-                        {
-                            if (bank->users[i]->get_name() == name)
-                            {
-                                user = bank->users[i];
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (found == false)
-                            std::cout << "User not found!\n";
-                        else
-                        {
-                            pManager->change_money(user, bank);
-                            bank->UpdateUser(user);
-                        }
-                        delete user;
-                        break;
-                    }
-                    case 2:
-                    {
-                        pManager->requestChangeSalary();
-                        std::cout << "Admin processed your request!\n";
-                        adapterC->access(pManager, bank);
-                        adapterC->requestChangeSalary();
-                        break;
-                    }
-                    case 3:
-                    {
-                        pManager->set_mediator(bank);
-                        pManager->send_noti_to_user();
-                        break;
-                    }
-                    case 4:
-                    {
-                        flag = false;
-                        break;
-                    }
-                    default:
-                        break;
-                    }
-                }
-            }
-            delete pManager;
-            break;
-        }
-        case 3:
-        {
-            std::cout << "Hello admin!" << endl;
-            bool flag = true;
-            while (flag)
-            {
-                std::cout << "1.Show list of users\n";
-                std::cout << "2.Show list of managers\n";
-                std::cout << "3.Add user\n";
-                std::cout << "4.Delete user\n";
-                std::cout << "5.Add manager\n";
-                std::cout << "6.Delete manager\n";
-                std::cout << "7.Exit\n";
-
-                int choice3;
-                cin >> choice3;
-                cin.ignore();
-
-                switch (choice3)
-                {
-                case 1:
-                {
-                    bank->showListUser();
-                    break;
-                }
-                case 2:
-                {
-                    bank->showListManager();
-                    break;
-                }
-                case 3:
-                {
-                    User *user = new User();
-                    user->set_mediator(bank);
-                    user->set_info();
-                    bank->create_account(user, bank);
-                    std::cout << "Add user " << user->get_name() << " successfully!" << endl;
-                }
-                case 4:
-                {
-                    string name;
-                    std::cout << "Enter name of user: ";
-                    getline(cin, name);
-                    User *user = new User();
-                    for (int i = 0; i < bank->users.size(); i++)
-                    {
-                        if (bank->users[i]->get_name() == name)
-                        {
-                            user = bank->users[i];
-                            break;
-                        }
-                    }
-                    bank->delete_user(user);
-                    delete user;
-                    break;
-                }
-                case 5:
-                {
-                    Manager *manager = new Manager();
-                    manager->set_mediator(bank);
-                    manager->set_info();
-                    bank->add_manager(manager);
-                    std::cout << "Add manager " << manager->get_name() << " successfully!" << endl;
-                    break;
-                }
-                case 6:
-                {
-                    string name;
-                    std::cout << "Enter name of manager: ";
-                    getline(cin, name);
-                    Manager *manager = new Manager();
-                    for (int i = 0; i < bank->managers.size(); i++)
-                    {
-                        if (bank->managers[i]->get_name() == name)
-                        {
-                            manager = bank->managers[i];
-                            break;
-                        }
-                    }
-                    bank->delete_manager(manager);
-                    delete manager;
-                    break;
-                }
-                case 7:
-                {
-                    flag = false;
-                    break;
-                }
-                default:
-                    break;
-                }
-            }
-            break;
-        }
-
-        case 4:
-        {
-            stop = true;
-            break;
-        }
-        default:
-            break;
-        }
-    }
-    std::cout << "Exit!" << endl;
-    saveData(banks);
-    delete bank;
     delete adapterB;
-    delete adapterC;
     delete adapterM;
+    delete adapterC;
+    for(int i = 0; i < banks.size(); i++)
+    {
+        delete banks[i];
+    }
+    // delete bank;
+    //still leak
     return 0;
 }
 
-/*
-input
-1
-2
-a
-a
-a
-a
-a
-a
-1
-1
-a
-a
-5
-99999999999
-3
-silver
-100
-3
-gold
-200
-*/
 
 // 2 vector trong class Bank tai sao k de private duoc ?
