@@ -1,0 +1,48 @@
+Vietcombank
+Ho Chi Minh City
+tungay
+password
+Tung Thai
+Sai Gon
+090912345
+tungthai@gmail.com
+1
+100000
+0
+
+Vietcombank
+Ho Chi Minh City
+phatshit
+password
+Phat Le
+Binh Duong
+033881341
+phatphat@gmail.com
+2
+32000000
+0
+
+Agribank
+Ho Chi Minh City
+thanhto
+password
+Thanh To
+Soc Trang
+8483838383
+thanhtovn@gmail.com
+1
+100000000
+0
+
+Vietcombank
+Ha Noi
+vankhaipea
+password
+Van Khai
+Cali
+3004197536
+khai100sun@gmail.com
+1
+1
+0
+
