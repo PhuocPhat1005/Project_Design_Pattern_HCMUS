@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "console": "externalTerminal",
-      "cwd": ".",
-      "program": "build/Debug/outDebug"
+      "cwd": "c:/Users/qthan/OneDrive/Desktop/DesignPatternOOP/src",
+      "program": "c:/Users/qthan/OneDrive/Desktop/DesignPatternOOP/src/build/Debug/outDebug"
     }
   ]
 }

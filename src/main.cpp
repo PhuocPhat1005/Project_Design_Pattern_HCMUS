@@ -1175,7 +1175,7 @@ int main()
                 cout << "Enter your password: ";
                 getline(cin, password);
                 // Manager *pManager = bank->searchManager(ID, password);
-                Manager *pManager = new Manager("ThanhTo", "HCM", "0123456789", "", "", 1000000);
+                Manager *pManager = bank->searchManager(ID, password);
                 if (pManager != NULL)
                 {
                     cout << "Hello " << pManager->get_name() << endl;
@@ -1228,7 +1228,7 @@ int main()
                         }
                         case 3:
                         {
-                            flag3 = false;
+                            flag3 = true;
                             break;
                         }
                         default:
@@ -1352,17 +1352,18 @@ int main()
             break;
         }
     }
+    system("cls");
+    cout << "Exit successfully!\n";
     delete adapterB;
     delete adapterM;
     delete adapterC;
-    for(int i = 0; i < banks.size(); i++)
+    for (int i = 0; i < banks.size(); i++)
     {
         delete banks[i];
     }
     // delete bank;
-    //still leak
+    // still leak
     return 0;
 }
-
 
 // 2 vector trong class Bank tai sao k de private duoc ?
