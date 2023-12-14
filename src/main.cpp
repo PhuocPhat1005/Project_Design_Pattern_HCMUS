@@ -1021,11 +1021,11 @@ int main()
 
     cout << "Welcome to " << bank->get_bankName() << "!\n";
     cout << "Please choose an option: \n";
-    choice1 = choiceMenu({"Sign In", "Sign Up", "Exit"});
 
     bool flag1 = false;
     while (!flag1)
     {
+        choice1 = choiceMenu({"Sign In", "Sign Up", "Exit"});
         switch (choice1)
         {
             int choice2;
@@ -1333,7 +1333,6 @@ int main()
             }
             break;
         }
-
         case 1:
         {
             User *user = new User();
