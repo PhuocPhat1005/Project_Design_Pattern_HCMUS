@@ -8,14 +8,6 @@ int main()
     AdapterManager *adapterM = new AdapterManager();
     ClassAdapter *adapterC = new ClassAdapter();
 
-    // User tmp("Thanh", "HCM", "0123456789", "", 0, 1000000);
-    // tmp.set_mediator(bank);
-    // Manager tmp2("Thaadasnh", "HCfasfaM", "01234aaaaaa6789", "", "", 10131232130);
-    // bank->add_manager(tmp2);
-    // bank->add_user(tmp);
-
-    // addManagerToBank(); bug
-
     vector<Bank *> banks = {new Bank("Vietcombank", "Ho Chi Minh City"),
                             new Bank("Vietinbank", "Ha Noi"),
                             new Bank("Agribank", "Ho Chi Minh City"),
@@ -54,11 +46,12 @@ int main()
                 string password;
                 getline(cin, password);
                 bool fought = false;
-                for (int i = 0; i < bank->users.size(); i++)
+                vector<User *> users = bank->get_users();
+                for (int i = 0; i < users.size(); i++)
                 {
-                    if (bank->users[i]->get_account().get_username() == username && bank->users[i]->get_account().get_password() == password)
+                    if (users[i]->get_account().get_username() == username && users[i]->get_account().get_password() == password)
                     {
-                        user = bank->users[i];
+                        user = users[i];
                         fought = true;
                         break;
                     }
@@ -202,11 +195,12 @@ int main()
                             cout << "Enter name of user: ";
                             getline(cin, name);
                             User *user = new User();
-                            for (int i = 0; i < bank->users.size(); i++)
+                            vector<User *> users = bank->get_users();
+                            for (int i = 0; i < users.size(); i++)
                             {
-                                if (bank->users[i]->get_name() == name)
+                                if (users[i]->get_name() == name)
                                 {
-                                    user = bank->users[i];
+                                    user = users[i];
                                     found = true;
                                     break;
                                 }
@@ -282,11 +276,12 @@ int main()
                         cout << "Enter name of user: ";
                         getline(cin, name);
                         User *user = new User();
-                        for (int i = 0; i < bank->users.size(); i++)
+                        vector<User *> users = bank->get_users();
+                        for (int i = 0; i < users.size(); i++)
                         {
-                            if (bank->users[i]->get_name() == name)
+                            if (users[i]->get_name() == name)
                             {
-                                user = bank->users[i];
+                                user = users[i];
                                 break;
                             }
                         }
@@ -309,11 +304,12 @@ int main()
                         cout << "Enter name of manager: ";
                         getline(cin, name);
                         Manager *manager = new Manager();
-                        for (int i = 0; i < bank->managers.size(); i++)
+                        vector<Manager *> managers = bank->get_managers();
+                        for (int i = 0; i < managers.size(); i++)
                         {
-                            if (bank->managers[i]->get_name() == name)
+                            if (managers[i]->get_name() == name)
                             {
-                                manager = bank->managers[i];
+                                manager = managers[i];
                                 break;
                             }
                         }
@@ -360,6 +356,7 @@ int main()
             break;
         }
     }
+    saveData(banks);
     system("cls");
     cout << "Exit successfully!\n";
     delete adapterB;

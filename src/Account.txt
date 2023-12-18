@@ -7,8 +7,10 @@ Sai Gon
 090912345
 tungthai@gmail.com
 1
+99999899999
+1
+Silver
 100000
-0
 
 Vietcombank
 Ho Chi Minh City
@@ -20,30 +22,6 @@ Binh Duong
 phatphat@gmail.com
 2
 32000000
-0
-
-Agribank
-Ho Chi Minh City
-thanhto
-password
-Thanh To
-Soc Trang
-8483838383
-thanhtovn@gmail.com
-1
-100000000
-0
-
-Vietcombank
-Ha Noi
-vankhaipea
-password
-Van Khai
-Cali
-3004197536
-khai100sun@gmail.com
-1
-1
 0
 
 Vietcombank
@@ -67,6 +45,18 @@ a
 a
 a
 4
+0
+0
+
+Vietcombank
+Ho Chi Minh City
+phatle
+1234
+phat
+Sai Gon
+0000
+10239
+5
 0
 0
 
@@ -106,15 +96,27 @@ phatle1005@gmail.com
 0
 0
 
-Vietcombank
+Agribank
 Ho Chi Minh City
-phatle
-1234
-phat
-Sai Gon
-0000
-10239
-5
+thanhto
+password
+Thanh To
+Soc Trang
+8483838383
+thanhtovn@gmail.com
+1
+100000000
 0
+
+Vietcombank
+Ha Noi
+vankhaipea
+password
+Van Khai
+Cali
+3004197536
+khai100sun@gmail.com
+1
+1
 0
 

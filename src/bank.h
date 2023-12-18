@@ -170,10 +170,10 @@ class Bank : public MediatorBank, public AdapterBank
 protected:
     string bankName, location;
 
-public:
     vector<Manager *> managers;
     vector<User *> users;
 
+public:
     Bank()
     {
         managers.clear();
@@ -189,6 +189,8 @@ public:
     void set_location(string location);
     string get_bankName();
     string get_location();
+    vector<User *> get_users();
+    vector<Manager *> get_managers();
     void add_manager(Manager *manager);
     void add_user(User *user);
     void delete_manager(Manager *manager);

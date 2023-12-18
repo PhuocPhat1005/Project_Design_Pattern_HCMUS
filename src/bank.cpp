@@ -342,7 +342,8 @@ void init(vector<Bank *> banks)
     if (file.is_open())
     {
         string bankName, location, username, password, name, address, phone, mail;
-        int ID, money, n;
+        int ID, n;
+        long long money;
         while (!file.eof())
         {
             getline(file, bankName);
@@ -436,24 +437,25 @@ void saveData(vector<Bank *> banks)
     ofstream fout("Account.txt");
     for (int i = 0; i < banks.size(); i++)
     {
-        for (int j = 0; j < banks[i]->users.size(); j++)
+        vector<User *> users = banks[i]->get_users();
+        for (int j = 0; j < users.size(); j++)
         {
             fout << banks[i]->get_bankName() << endl;
             fout << banks[i]->get_location() << endl;
-            fout << banks[i]->users[j]->get_account().get_username() << endl;
-            fout << banks[i]->users[j]->get_account().get_password() << endl;
-            fout << banks[i]->users[j]->get_name() << endl;
-            fout << banks[i]->users[j]->get_address() << endl;
-            fout << banks[i]->users[j]->get_phone() << endl;
-            fout << banks[i]->users[j]->get_mail() << endl;
-            fout << banks[i]->users[j]->get_ID() << endl;
-            fout << banks[i]->users[j]->get_money() << endl;
-            int n = banks[i]->users[j]->get_cards().size();
+            fout << users[j]->get_account().get_username() << endl;
+            fout << users[j]->get_account().get_password() << endl;
+            fout << users[j]->get_name() << endl;
+            fout << users[j]->get_address() << endl;
+            fout << users[j]->get_phone() << endl;
+            fout << users[j]->get_mail() << endl;
+            fout << users[j]->get_ID() << endl;
+            fout << users[j]->get_money() << endl;
+            int n = users[j]->get_cards().size();
             fout << n << endl;
             for (int k = 0; k < n; k++)
             {
-                fout << banks[i]->users[j]->get_cards()[k].get_type() << endl;
-                fout << banks[i]->users[j]->get_cards()[k].get_money_in_card() << endl;
+                fout << users[j]->get_cards()[k].get_type() << endl;
+                fout << users[j]->get_cards()[k].get_money_in_card() << endl;
             }
             fout << endl;
         }
@@ -463,17 +465,18 @@ void saveData(vector<Bank *> banks)
     fout.open("Manager.txt");
     for (int i = 0; i < banks.size(); i++)
     {
-        for (int j = 0; j < banks[i]->managers.size(); j++)
+        vector<Manager *> managers = banks[i]->get_managers();
+        for (int j = 0; j < managers.size(); j++)
         {
             fout << banks[i]->get_bankName() << endl;
             fout << banks[i]->get_location() << endl;
-            fout << banks[i]->managers[j]->get_name() << endl;
-            fout << banks[i]->managers[j]->get_address() << endl;
-            fout << banks[i]->managers[j]->get_phone() << endl;
-            fout << banks[i]->managers[j]->get_mail() << endl;
-            fout << banks[i]->managers[j]->get_ID() << endl;
-            fout << banks[i]->managers[j]->get_password() << endl;
-            fout << banks[i]->managers[j]->get_salary() << endl;
+            fout << managers[j]->get_name() << endl;
+            fout << managers[j]->get_address() << endl;
+            fout << managers[j]->get_phone() << endl;
+            fout << managers[j]->get_mail() << endl;
+            fout << managers[j]->get_ID() << endl;
+            fout << managers[j]->get_password() << endl;
+            fout << managers[j]->get_salary() << endl;
             fout << endl;
         }
     }
@@ -546,7 +549,7 @@ void AdapterBank::create_account(User *user, Bank *bank) const
     Account account(username, password);
     user->set_account(account);
     user->set_money(0);
-    user->set_ID(bank->users.size() + 1);
+    user->set_ID(bank->get_users().size() + 1);
     cout << "Create account for " << user->get_name() << " successfully!" << endl;
     user->set_email();
     bank->add_user(user);
@@ -601,6 +604,14 @@ string Bank::get_bankName()
 string Bank::get_location()
 {
     return location;
+}
+vector<User *> Bank::get_users()
+{
+    return users;
+}
+vector<Manager *> Bank::get_managers()
+{
+    return managers;
 }
 void Bank::add_user(User *user)
 {
