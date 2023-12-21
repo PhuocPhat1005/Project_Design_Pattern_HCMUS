@@ -186,7 +186,6 @@ public:
     }
     ~Bank() { ; }
     void set_bankName(string bankName);
-    void set_location(string location);
     string get_bankName();
     string get_location();
     vector<User *> get_users();

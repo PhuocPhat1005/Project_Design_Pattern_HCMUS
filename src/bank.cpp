@@ -381,6 +381,7 @@ void init(vector<Bank *> banks)
             {
                 if (banks[i]->get_bankName() == bankName && banks[i]->get_location() == location)
                 {
+                    user->set_mediator(banks[i]);
                     banks[i]->add_user(user);
                     break;
                 }
@@ -429,7 +430,7 @@ void init(vector<Bank *> banks)
     {
         cout << "Unable to open file!" << endl;
     }
-    cout << "Init successfully!" << endl;
+    cout << "Init successfully! " << endl;
 }
 
 void saveData(vector<Bank *> banks)
@@ -753,7 +754,6 @@ void Bank::send_money_to_other_user(User *user)
         cout << "Send money to " << user_get_money->get_name() << " successfully!\n";
         UpdateUser(user_get_money);
     }
-    delete user_get_money;
 }
 void Bank::send_noti_to_user()
 {

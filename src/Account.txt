@@ -7,7 +7,7 @@ Sai Gon
 090912345
 tungthai@gmail.com
 1
-99999899999
+11
 1
 Silver
 100000
@@ -21,7 +21,7 @@ Binh Duong
 033881341
 phatphat@gmail.com
 2
-32000000
+31999990
 0
 
 Vietcombank

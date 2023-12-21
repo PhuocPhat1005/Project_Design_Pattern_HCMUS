@@ -65,17 +65,6 @@ int main()
                     bool flag2 = false;
                     while (!flag2)
                     {
-                        // cout << "1. Change info\n";
-                        // cout << "2. Change password\n";
-                        // cout << "3. Create card\n"; // adapter
-                        // cout << "4. Show info\n";
-                        // cout << "5. Send request to change money\n"; // adapter
-                        // cout << "6. Sum of money in cards\n";        // mediator
-                        // cout << "7. Find card\n";                    // mediator
-                        // cout << "8. Rut tien ve tai khoan\n";        // mediator
-                        // cout << "9. Send money to other user\n";     // mediator
-                        // cout << "10. Exit\n";
-
                         int choice3 = choiceMenu({"Change info", "Change password", "Create card", "Show info", "Send request to change money", "Sum of money in cards", "Find card", "Rut tien ve tai khoan", "Send money to other user", "Back"});
                         switch (choice3)
                         {
@@ -106,6 +95,7 @@ int main()
                         {
                             user->change_money();
                             cout << "An manager will process your request!\n";
+                            AdapterManager *adapterM = new AdapterManager();
                             adapterM->change_money(user, bank);
                             bank->UpdateUser(user);
                             break;
@@ -366,7 +356,5 @@ int main()
     {
         delete banks[i];
     }
-    // delete bank;
-    // still leak
     return 0;
 }
