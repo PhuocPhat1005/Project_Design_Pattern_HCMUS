@@ -1,4 +1,4 @@
-# PROJECT DESIGN PATTERN 
+# PROJECT DESIGN PATTERN HCMUS
 
 ------------------
 
